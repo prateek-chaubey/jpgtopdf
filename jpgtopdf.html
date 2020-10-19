@@ -242,7 +242,9 @@ opacity:0;
 
 var pages=0;
 var childE=0;
-
+var hie;
+var wie;
+var ratio;
 
 function addfile(){
 document.getElementById("fil").click();
@@ -273,7 +275,9 @@ image.addEventListener("load",function(){
 var canvas = document.createElement("canvas");
 var context = canvas.getContext("2d");
 
-var ratio=this.height/this.width;
+ratio=this.height/this.width;
+hie=this.height;
+wie=this.width;
 image.style.width=200+"px";
 image.style.height=200*ratio+"px";
 
@@ -366,7 +370,7 @@ rand="";
 /**/
 
 var stag=document.createElement("script");
-stag.innerHTML="function sv"+rand+"(){var doc=new jsPDF('p','px','a4');"+document.getElementById("wholecode").value+"doc.save('"+nam+".pdf');} sv"+rand+"();";
+stag.innerHTML="function sv"+rand+"(){var doc=new jsPDF('p','px',["+300+","+300*ratio+"]);"+document.getElementById("wholecode").value+"doc.save('"+nam+".pdf');} sv"+rand+"();";
 document.body.appendChild(stag);
 document.getElementById("previewDiv").innerHTML="";
 document.getElementById("wholecode").value="";
