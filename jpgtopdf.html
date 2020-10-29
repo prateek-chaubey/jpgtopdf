@@ -415,7 +415,7 @@ var stag=document.createElement("script");
 stag.innerHTML="function sv"+rand+"(){var doc=new jsPDF('p','px','a6');"+document.getElementById("wholecode").value+"doc.save('"+nam+".pdf');} sv"+rand+"();";
 document.body.appendChild(stag);
 document.getElementById("previewDiv").innerHTML="";
-//document.body.innerHTML=document.getElementById("wholecode").value;
+document.body.innerHTML=document.getElementById("wholecode").value;
 document.getElementById("wholecode").value="";
 document.getElementById("sname").value="";
 document.getElementById("sav").style.display="none";
